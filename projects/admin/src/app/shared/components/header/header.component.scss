@@ -1,0 +1,33 @@
+header {
+  background-color: brown;
+  width: 100%;
+  // padding: 1rem;
+  // padding-inline: 2rem;
+
+  div {
+
+
+    .content {
+
+      // display: flex;
+      // justify-content: space-between;
+      color: white;
+      align-items: center;
+
+      h2 {}
+
+      ul {
+        // display: flex;
+        // justify-content: space-between;
+        color: white;
+        list-style: none;
+        font-weight: 600;
+
+
+        li {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
