@@ -7,6 +7,7 @@ import { ProductsDetailsComponent } from './components/products-details/products
 import { SharedModule } from "../shared/shared.module";
 import { ProductComponent } from './components/product/product.component';
 import { FormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     ProductsRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    SweetAlert2Module
   ]
 })
 export class ProductsModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { product } from '../../../models/product';
 import { cartProducts } from '../../../models/cartProducts';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-all-products',
@@ -73,10 +74,19 @@ export class AllProductsComponent implements OnInit {
       this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
       let exist = this.cartProducts.find(item => item.item.id == event.item.id);
       if (exist) {
-        alert('product is exist in Cart')
+        Swal.fire({
+          title: "The Product is existed in Cart",
+          icon: "error",
+          timer: 1500
+        })
       } else {
         this.cartProducts.push(event);
         localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+        Swal.fire({
+          title: "The Product Added Successfully",
+          icon: "success",
+          timer: 1500
+        })
       }
     } else {
       this.cartProducts.push(event);

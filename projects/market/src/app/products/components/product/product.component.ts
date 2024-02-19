@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { product } from '../../../models/product';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -14,6 +14,7 @@ export class ProductComponent {
   constructor() { }
   add() {
     this.item.emit({ item: this.data, quantity: this.amount });
+
   }
   disAppear() {
     this.apearAddBtn = false;

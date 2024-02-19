@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SelectComponent } from './components/select/select.component';
 import { FormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     SharedRoutingModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SweetAlert2Module
   ],
   exports: [
     HeaderComponent,

@@ -4,6 +4,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 // import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import { CartsService } from '../../services/carts.service';
 import { cartProducts } from '../../../models/cartProducts';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -91,20 +92,33 @@ export class CartComponent implements OnInit {
     this.success = false
   }
   addNewCart() {
-    let products = this.cartProducts.map((item: { item: { id: any; }; quantity: any; }) => {
-      return { productId: item.item.id, quantity: item.quantity }
-    }
-    )
-    let model = {
-      userId: 5,
-      date: new Date(),
-      products: products
-    }
-    console.log(model);
-    this._cartService.createNewCart(model);
-    this.success = true
-    setInterval(() => {
-      this.successFN();
-    }, 3000)
+    if (this.cartProducts.length !== 0) {
+      let products = this.cartProducts.map((item: { item: { id: any; }; quantity: any; }) => {
+        return { productId: item.item.id, quantity: item.quantity }
+      }
+      )
+      let model = {
+        userId: 5,
+        date: new Date(),
+        products: products
+      }
+      console.log(model);
+      this._cartService.createNewCart(model);
+      this.success = true
+      // setInterval(() => {
+      //   this.successFN();
+      // }, 3000)
+      Swal.fire({
+        title: "your order has been succesfully",
+        icon: "success",
+        timer: 1500
+      })
+      this.clearCart();
+    } else Swal.fire({
+      title: "Cart is empty",
+      icon: "error",
+      timer: 1500
+    })
+
   }
 }

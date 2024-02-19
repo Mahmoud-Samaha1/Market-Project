@@ -12,6 +12,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './carts/components/cart/cart.component';
 import { CartsModule } from './carts/carts.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CartsModule } from './carts/carts.module';
     FormsModule,
     FontAwesomeModule,
     CommonModule,
-    FaIconComponent
+    FaIconComponent,
+    SweetAlert2Module
 
   ],
   providers: [],
