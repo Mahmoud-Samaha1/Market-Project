@@ -14,7 +14,6 @@ export class ProductComponent {
   constructor() { }
   add() {
     this.item.emit({ item: this.data, quantity: this.amount });
-
   }
   disAppear() {
     this.apearAddBtn = false;

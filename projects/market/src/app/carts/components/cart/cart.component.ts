@@ -104,7 +104,7 @@ export class CartComponent implements OnInit {
       }
       console.log(model);
       this._cartService.createNewCart(model);
-      this.success = true
+      // this.success = true
       // setInterval(() => {
       //   this.successFN();
       // }, 3000)

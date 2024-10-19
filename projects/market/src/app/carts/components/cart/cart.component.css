@@ -3,27 +3,9 @@ body {
   background: #eee;
 }
 
-.view-cart-bg {
-  background-color: black;
-  margin-inline: -100px;
-  overflow: hidden;
-}
-
 .ui-w-40 {
   width: 40px !important;
   height: auto;
-}
-
-.date-filter {
-  .start-date {}
-
-  .end-date {}
-
-  button {
-    height: 40px;
-    width: 10%;
-    letter-spacing: 2px;
-  }
 }
 
 .card {
@@ -41,17 +23,10 @@ a {
   width: 0.875rem;
   height: 0.875rem;
   border-radius: 10rem;
-  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
   vertical-align: middle;
 }
 
 .media {
   display: flex;
-
-  img {}
-
-  .media-body {
-    a {}
-  }
-}
+}/*# sourceMappingURL=cart.component.css.map */

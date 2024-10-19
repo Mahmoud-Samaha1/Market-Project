@@ -1,8 +1,9 @@
 header {
   background-color: brown;
   width: 100%;
-  // padding: 1rem;
-  // padding-inline: 2rem;
+  position: fixed;
+  top: 0px;
+  z-index: 999;
 
   div {
 

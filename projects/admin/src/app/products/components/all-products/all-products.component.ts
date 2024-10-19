@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { product } from '../../../models/product';
 import { cartProducts } from '../../../models/cartProducts';
@@ -20,6 +20,8 @@ export class AllProductsComponent implements OnInit {
   updateForm!: FormGroup
   addBase64: any = '';
   cartId:any;
+  appear:boolean = true
+  @ViewChild('imageInput') imgInput: any;
   constructor(
     private _service: ProductsService,
     private _build: FormBuilder,
@@ -120,6 +122,19 @@ export class AllProductsComponent implements OnInit {
   addProduct() {
     const model = this.addForm.value
     this._productService.addProduct(model)
+    console.log(model);
+    this.addForm.patchValue({
+      title: "",
+      price: "",
+      description: "",
+      image: this.addBase64 = "",
+      category: '',
+      id: ''
+    })
+    // this.addForm.get("image")?.reset()
+    this.imgInput.nativeElement.value = '';
+    console.log(this.addForm.value)
+// this.appear = true
   }
   updateProduct() {
     const model = this.updateForm.value

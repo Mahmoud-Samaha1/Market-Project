@@ -9,13 +9,13 @@
   Add Product
 </button>
 
-<!-- Add Modal -->
+<!-- Add Product Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add New Product</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" #closeAddBtn class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body row" [formGroup]="addForm">
         <div class=" col-4">
@@ -24,7 +24,7 @@
         </div>
         <div class="col-4">
           <label for="" class="form-label">Price</label>
-          <input type="text" formControlName="price" id="" class="form-control" placeholder="price" />
+          <input type="number" formControlName="price" id="" class="form-control" placeholder="price" />
         </div>
         <div class=" col-4">
           <app-select [title]="'Categories'" [categoryData]="allCategories" (selectedValue)="getCategoryName($event)"
@@ -33,7 +33,8 @@
         <div class="col-4 mt-2">
           <label for="" class="form-label">image</label>
           <img src="{{addBase64}}" alt="">
-          <input type="file" (change)="getAddImagePath($event)" name="" id="" class="form-control" placeholder="" />
+          <input type="file" (change)="getAddImagePath($event)" #imageInput name="" id="" class="form-control"
+            placeholder="" />
         </div>
         <div class="col-8 mt-2">
           <label for="" class="form-label">Description</label>
@@ -43,14 +44,15 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" [disabled]="!addForm.valid" (click)="addProduct()">Add
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" [disabled]="!addForm.valid"
+          (click)="addProduct() ">Add
           Product</button>
       </div>
     </div>
   </div>
 </div>
 
-<!--Update Modal -->
+<!--Update Product Modal -->
 <div class="modal fade" id="updateProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -65,7 +67,7 @@
         </div>
         <div class="col-4">
           <label for="" class="form-label">Price</label>
-          <input type="text" formControlName="price" id="" class="form-control" placeholder="price" />
+          <input type="number" formControlName="price" id="" class="form-control" placeholder="price" />
         </div>
         <div class=" col-4">
           <app-select [title]="'Categories'" [categoryData]="allCategories" (selectedValue)="getCategoryName($event)"
@@ -84,7 +86,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning" [disabled]="!updateForm.valid" (click)="updateProduct()">Update
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" [disabled]="!updateForm.valid"
+          (click)="updateProduct()">Update
         </button>
       </div>
     </div>

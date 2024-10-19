@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Observable, catchError, retry, throwError } from 'rxjs';
 import { product } from '../../models/product';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,6 @@ export class ProductsService {
   // }
 
   getAllProducts(): Observable<any> {
-
     return this._http.get(`https://fakestoreapi.com/products`).pipe(
       retry(2),
       catchError(this.handleError)
@@ -66,12 +66,20 @@ export class ProductsService {
 
   addProduct(model: any) {
     this._http.post('https://fakestoreapi.com/products', model).subscribe(res => {
-      alert('success')
+      Swal.fire({
+        title: "The Product Added Successfully",
+        icon: "success",
+        timer: 1500
+      })
     })
   }
-  updateProduct(model: any, id:any) {
+  updateProduct(model: any, id: any) {
     this._http.put(`https://fakestoreapi.com/products/${id}`, model).subscribe(res => {
-      alert('success')
+      Swal.fire({
+        title: "The Product Updated Successfully",
+        icon: "success",
+        timer: 1500
+      })
     })
   }
 }
