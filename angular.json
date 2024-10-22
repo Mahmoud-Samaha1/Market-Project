@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/market",
+            "outputPath": "docs",
             "index": "projects/market/src/index.html",
             "browser": "projects/market/src/main.ts",
             "polyfills": [
